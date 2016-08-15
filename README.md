@@ -1,6 +1,6 @@
 # tableView pageView
 作者：zp
-QQ:1076559139
+有问题一起讨论 QQ群:577212679
 
 initTableView- 初始化tableView，在tableView下
 initTableView (count, data) ;
