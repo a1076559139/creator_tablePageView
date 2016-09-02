@@ -420,7 +420,7 @@ cc.Class({
             this._scrollView = this.getComponent(cc.ScrollView);
             var eventHandler = new cc.Component.EventHandler();
             eventHandler.target = this.node;
-            eventHandler.component = "tableView";
+            eventHandler.component = "tableview";
             eventHandler.handler = "_scrollEvent";
             this._scrollView.scrollEvents.push(eventHandler);
 
@@ -660,7 +660,7 @@ cc.Class({
                     for (var k in cell.children) {
                         var box = cell.children[k].getBoundingBox();
                         if (box.contains(convertp)) {
-                            cell.children[k].clicked(this);
+                            cell.children[k].clicked();
                             return;
                         }
                     }
@@ -669,7 +669,7 @@ cc.Class({
             } else {
                 var box = this._content.children[key].getBoundingBox();
                 if (box.contains(convertp)) {
-                    this._content.children[key].clicked(this);
+                    this._content.children[key].clicked();
                     return;
                 }
             }
@@ -688,14 +688,10 @@ cc.Class({
                     if (this._scrollDirection == scrollDirection.Left) {
                         if (this._page < this._pageTotal) {
                             this._changePageNum(1);
-                        } else {
-
                         }
                     } else if (this._scrollDirection == scrollDirection.Rigth) {
                         if (this._page > 1) {
                             this._changePageNum(-1);
-                        } else {
-
                         }
                     }
                 }
@@ -705,14 +701,10 @@ cc.Class({
                     if (this._scrollDirection == scrollDirection.Up) {
                         if (this._page < this._pageTotal) {
                             this._changePageNum(1);
-                        } else {
-
                         }
                     } else if (this._scrollDirection == scrollDirection.Down) {
                         if (this._page > 1) {
                             this._changePageNum(-1);
-                        } else {
-
                         }
                     }
                 }
@@ -746,7 +738,10 @@ cc.Class({
             }
 
             this._scrollDirection = this._tempScrollDirection;
-            this._scrollView.scrollToOffset({ x: x, y: y }, 0.3);
+            var maxoffset = this._scrollView.getMaxScrollOffset();
+            if (!(-offset.x <= 0 && -offset.y <= 0) && !(-offset.x >= maxoffset.x && -offset.y >= maxoffset.y)) {
+                this._scrollView.scrollToOffset({ x: x, y: y }, 0.3);
+            }
         }
     },
     _getBoundingBoxToWorld: function (node) {
