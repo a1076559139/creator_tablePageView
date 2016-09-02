@@ -88,6 +88,7 @@ cc.Class({
         stopPropagation: {
             default: true,
             tooltip: '是否禁止触摸事件向父级传递',
+            visible: false
         },
         pageChangeEvents: {
             default: [],
