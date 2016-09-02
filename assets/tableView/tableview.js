@@ -546,7 +546,7 @@ cc.Class({
         this.scrollToPage(this._page - 1);
     },
     scrollToPage: function (page) {
-        if (this.viewType != viewType.pageView) {
+        if (this.viewType != viewType.pageView || !this._scrollView) {
             return;
         }
 
