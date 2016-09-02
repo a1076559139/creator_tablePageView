@@ -705,12 +705,8 @@
     "_scrollView": null,
     "_view": null,
     "_content": null,
-    "_initSuccess": false,
     "_page": 0,
     "_pageTotal": 0,
-    "cell": {
-      "__uuid__": "be687b62-0d4a-4761-b460-4a067d698da1"
-    },
     "touchLayer": {
       "__id__": 12
     },
@@ -725,7 +721,11 @@
       {
         "__id__": 23
       }
-    ]
+    ],
+    "_initSuccess": false,
+    "_N$cell": {
+      "__uuid__": "be687b62-0d4a-4761-b460-4a067d698da1"
+    }
   },
   {
     "__type__": "cc.ClickEvent",

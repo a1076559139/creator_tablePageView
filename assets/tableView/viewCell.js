@@ -18,22 +18,12 @@ cc.Class({
     _cellAddMethodToNode_: function () {
         this.node.clicked = this.clicked.bind(this);
         this.node.on = function () {
-            cc.warn('cell不支持注册on事件，所有已注册on事件失效');
+            cc.warn('cell不支持注册on事件，所有已注册on事件失效，请重写clicked方法');
         }
     },
     _cellInit_: function () {
         if (!this._isCellInit_) {
             this._cellAddMethodToNode_();
-            // this.node.on('touchstart', function (event) {
-            //     this.startpy = event.getLocation().y;
-            // }, this);
-
-            // this.node.on('touchend', function (event) {
-            //     var py = event.getLocation().y;
-            //     if (Math.abs(py - this.startpy) < 4) {
-            //         this.clicked();
-            //     }
-            // }, this);
             this._isCellInit_ = true;
         }
     },
@@ -52,6 +42,7 @@ cc.Class({
 
     //需要重写的方法
 
+    //cell中的子节点可以使用on事件
     //被点击时相应的方法
     clicked: function () {
 
