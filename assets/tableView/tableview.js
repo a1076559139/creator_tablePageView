@@ -164,7 +164,7 @@ cc.Class({
                 for (var index = 0; index < cell.childrenCount; ++index) {
                     var node = cell.children[index];
                     node.getComponent('viewCell')._cellInit_();
-                    node.getComponent('viewCell').init(tag + index, this._data);
+                    node.getComponent('viewCell').init(tag + index, this._data, cell.tag);
                 }
             } else {
                 var tag = Math.floor(cell.tag / this._showCellCount);
@@ -173,7 +173,7 @@ cc.Class({
                 for (var index = 0; index < cell.childrenCount; ++index) {
                     var node = cell.children[index];
                     node.getComponent('viewCell')._cellInit_();
-                    node.getComponent('viewCell').init(this._showCellCount * index + cell.tag % this._showCellCount + tagnum, this._data);
+                    node.getComponent('viewCell').init(this._showCellCount * index + cell.tag % this._showCellCount + tagnum, this._data, index + tag * cell.childrenCount);
                 }
             }
         } else {

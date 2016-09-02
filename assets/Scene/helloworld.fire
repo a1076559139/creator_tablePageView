@@ -740,7 +740,7 @@
     "Spacing": 0,
     "viewType": 1,
     "Type": 1,
-    "Direction": 0,
+    "Direction": 1,
     "isFill": false,
     "stopPropagation": true,
     "pageChangeEvents": [
