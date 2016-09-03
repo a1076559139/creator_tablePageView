@@ -30,5 +30,5 @@ scrollToPage(page) ;
 *    isFill，当节点不能铺满一个页时，选择isFill为true会填充节点铺满整个view
 
 
-比如：cell的大小规定为20*20，想5*5的显示出来，并且是横向page滑动，cell从左到右从上到下排列
+比如：cell的大小规定为20x20，想5x5的显示出来，并且是横向page滑动，cell从左到右从上到下排列
 那么tableView的大小就应该是100*100，并且选择ViewType为pageView，Type为GRID模式，Direction为LEFT_TO_RIGHT__TOP_TO_BOTTOM，同时scrollview中的horizontal选中
