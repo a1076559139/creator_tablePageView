@@ -738,9 +738,9 @@
     },
     "Padding": 0,
     "Spacing": 0,
-    "viewType": 1,
-    "Type": 1,
-    "Direction": 1,
+    "viewType": 0,
+    "Type": 0,
+    "Direction": 0,
     "isFill": false,
     "stopPropagation": true,
     "pageChangeEvents": [

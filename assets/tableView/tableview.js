@@ -24,7 +24,9 @@ var _searchMaskParent = function (node) {
 
 cc.Class({
     extends: cc.Component,
-
+    // editor: {
+    //     inspector: 'packages://tableview/inspector.js', 
+    // },
     properties: {
         _data: null,
         _minCellIndex: 0,//cell的最小下标
@@ -76,11 +78,6 @@ cc.Class({
             type: Type,
             tooltip: '为NONE时，根据滚动方向单行或单列展示排列cell，位置居中\n为GRID时，会根据view的宽或高去匹配显示多少行或多少列',
         },
-        Direction: {
-            default: 0,
-            type: Direction,
-            tooltip: '仅当viewType为pageView时有效，规定cell的排列方向',
-        },
         isFill: {
             default: false,
             tooltip: '当节点不能铺满一页时，选择isFill为true会填充节点铺满整个view',
@@ -88,7 +85,11 @@ cc.Class({
         stopPropagation: {
             default: true,
             tooltip: '是否禁止触摸事件向父级传递',
-            visible: false
+        },
+        Direction: {
+            default: 0,
+            type: Direction,
+            tooltip: '仅当viewType为pageView时有效，规定cell的排列方向',
         },
         pageChangeEvents: {
             default: [],

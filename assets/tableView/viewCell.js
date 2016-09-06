@@ -17,8 +17,11 @@ cc.Class({
     //不可以重写
     _cellAddMethodToNode_: function () {
         this.node.clicked = this.clicked.bind(this);
+        var on = this.node.on;
+
         this.node.on = function () {
-            cc.warn('cell不支持注册on事件，所有已注册on事件失效，请重写clicked方法');
+            cc.warn(this.name + '：主节点的点击事件，请请重写clicked方法');
+            on.apply(this, arguments);
         }
     },
     _cellInit_: function () {
