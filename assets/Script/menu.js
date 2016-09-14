@@ -2,7 +2,7 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        tableView: require('tableview')
+        tableView: cc.Node,
     },
 
     // use this for initialization
@@ -22,13 +22,17 @@ cc.Class({
         return array;
     },
     initView: function () {
-        var data = this._getdata(100);
-        this.tableView.initTableView(data.length, { array: data, target: this });
+        var data = this._getdata(200);
+        this.tableView.getComponent('tableview2').initTableView(data.length, { array: data, target: this });
     },
     nextPage: function () {
-        this.tableView.scrollToNextPage();
+        this.tableView.getComponent('tableview2').scrollToNextPage();
+        // this.tableView.scrollToOffset({ x: 0, y: -200 }, 1);
+        // this.tableView.scrollToOffset({ x: -200, y: 0 }, 1);
     },
     lastPage: function () {
-        this.tableView.scrollToLastPage();
+        this.tableView.getComponent('tableview2').scrollToLastPage();
+        // this.tableView.scrollToOffset({ x: 0, y: 200 }, 1);
+        // this.tableView.scrollToOffset({ x: 200, y: 0 }, 1);
     }
 });

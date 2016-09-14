@@ -46,7 +46,7 @@ cc.Class({
 
         _page: 0,//当前处于那一页
         _pageTotal: 0,//总共有多少页
-
+        content: cc.Node,
         cell: {
             default: null,
             type: cc.Prefab,
@@ -235,7 +235,7 @@ cc.Class({
                     if (this._groupCellCount == null) {
                         this._groupCellCount = Math.floor((this._view.height - 2 * this.Padding + this.Spacing) / (cell.height + this.Spacing));
                     }
-                    
+
                     node.height = this._view.height;
 
                     for (var index = 0; index < this._groupCellCount; ++index) {
@@ -412,15 +412,15 @@ cc.Class({
         this._data = data;
 
         if (!this._initSuccess) {
-            this._scrollView = this.getComponent(cc.ScrollView);
+            this._content = this.content;
+            this._view = this._content.parent;
+
+            this._scrollView = this._view.getComponent(cc.ScrollView);
             var eventHandler = new cc.Component.EventHandler();
             eventHandler.target = this.node;
             eventHandler.component = "tableview";
             eventHandler.handler = "_scrollEvent";
             this._scrollView.scrollEvents.push(eventHandler);
-
-            this._content = this._scrollView.content;
-            this._view = this._content.parent;
 
             this._addMethodToScrollView();
 

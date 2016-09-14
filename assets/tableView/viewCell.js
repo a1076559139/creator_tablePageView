@@ -52,7 +52,7 @@ cc.Class({
     },
 
     //加载需要初始化数据时调用
-    init: function (index, data) {
+    init: function (index, data, group) {
 
     },
 
