@@ -1,3 +1,6 @@
+# Discard 废弃
+# 请使用https://github.com/a1076559139/creator_tableView
+
 # tableView pageView
 作者：zp
 
